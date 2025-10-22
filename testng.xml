@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Regression Suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+        <listener class-name="com.practice.listener.TestListener"/>
+        <listener class-name="com.practice.retry.RetryTransformer"/>
+    </listeners>
+    <test name="Chrome Tests" parallel="methods" thread-count="2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.practice.tests.CandyMapperFormTest"/>
+        </classes>
+    </test>
+    <test name="Firefox Tests" parallel="methods" thread-count="2">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.practice.tests.CandyMapperFormTest"/>
+        </classes>
+    </test>
+</suite>
