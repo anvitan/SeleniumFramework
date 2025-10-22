@@ -1,4 +1,4 @@
-`````` # Selenium Automation Framework
+ # Selenium Automation Framework
 
 A comprehensive, enterprise-grade test automation framework built with Selenium WebDriver, TestNG, and Maven. Features dual reporting capabilities, cross-browser testing, and flexible configuration management.
 
@@ -12,7 +12,7 @@ A comprehensive, enterprise-grade test automation framework built with Selenium 
 
 ## 📁 Project Structure
 
-src/
+`````` src/
 ├── main/java/com/practice/web/
 │ ├── config/ # Configuration management
 │ ├── constants/ # Framework and page constants
@@ -28,6 +28,7 @@ src/
 └── test/
 ├── java/ # Test classes
 └── resources/ # Test resources and configuration
+``````
 
 
 ## 🛠️ Setup & Installation
@@ -91,6 +92,8 @@ This framework supports only the following Maven command patterns:
 mvn clean test -Psmoke -DreportType=EXTENT_REPORT -Dheadless=false
 
 ## ReportPortal with headless browser (CI/CD)
+
+`````` 
 mvn clean test -Psmoke -DreportType=REPORT_PORTAL -Dheadless=true
 Command Parameters Explained
 Required Parameters:
@@ -120,10 +123,12 @@ mvn clean test -Psmoke -DreportType=REPORT_PORTAL -Dheadless=true
 Use case: Faster test execution without browser GUI
 Browser: Headless mode for resource-efficient execution
 Reports: Results sent to ReportPortal dashboard
+``````
 
 ## 📊 Reporting
 
 **ExtentReports**
+``````
 Purpose: Local development and debugging
 Output: HTML reports in target/extent-reports/
 Features: Screenshots, test steps, execution timeline          
@@ -137,15 +142,18 @@ Screenshots
 Auto-capture: On test failure
 Manual capture: Via LoggerUtils.attachScreenShot()
 Storage: target/artifacts/screenshots/
+``````
 
 ## 🔧 Framework Parameters
 Supported Maven Parameters
 This framework supports only these specific parameters:
 
 ## Parameter Values	Required Description
+``````
 -Psmoke	smoke	✅ Yes	Maven profile that activates the test suite
 -DreportType	EXTENT_REPORT, REPORT_PORTAL	✅ Yes	Report generation type
 -Dheadless	true, false	✅ Yes	Browser display mode
+
 
 **Parameter Details**
 -Psmoke (Maven Profile)
@@ -165,6 +173,8 @@ Real-time test execution monitoring
 -Dheadless (Browser Mode)
 true: Browser runs without GUI (invisible), faster execution, screenshots still work
 false: Browser window visible during execution, better for debugging
+
+``````
 
 ## 📝 Test Development
 Creating Page Objects
@@ -192,7 +202,7 @@ public class LoginTest extends BaseTest {
             .verifySuccessfulLogin();
     }
 }
-
+``````
 Using Logging
 // Info logging
 LoggerUtils.info("Starting test execution");
@@ -203,8 +213,10 @@ LoggerUtils.attachScreenShot("login_failure", screenshotFile);
 
 // Browser actions
 LoggerUtils.browserAction("CLICK", "Login Button");
+``````
 
 ## 🔄 Test Retry Configuration
+``````
 Automatic Retry
 Failed tests: Automatically retry up to 2 times
 Configuration: RetryAnalyzer.java
@@ -214,6 +226,8 @@ Custom Retry
 public void flakyTest() {
 // Test implementation
 }
+``````
+
 ## 🔍 Troubleshooting
 Common Issues
 Browser Not Starting
@@ -238,6 +252,7 @@ mvn test -DreportType=EXTENT_REPORT
 ls -la target/extent-reports/
 
 ## 🤝 Contributing
+``````
 Fork the repository
 Create feature branch (git checkout -b feature/amazing-feature)
 Commit changes (git commit -m 'Add amazing feature')
@@ -249,8 +264,10 @@ For questions and support:
 Create an issue in the repository
 Check the troubleshooting section
 Review the configuration examples
+``````
 
 ## 🏗️ Framework Architecture
+``````
 This framework follows enterprise-grade design patterns:
 
 Factory Pattern: Driver and Logger creation
@@ -258,5 +275,6 @@ Strategy Pattern: Multiple reporting implementations
 Page Object Model: Clean page structure
 Builder Pattern: Configuration management
 Observer Pattern: Test lifecycle listeners
+``````
 
 Built with ❤️ for reliable, scalable test automation.
